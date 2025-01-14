@@ -1,0 +1,109 @@
+@use './colors' as c;
+@use './typography' as t;
+
+.calculator {
+  max-width: 360px;
+  margin: auto;
+}
+
+.title-bar {
+  font-family: t.$league-spartan;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  color: c.$text-white-1;
+  margin-bottom: 20px;
+
+  & h1 {
+    margin-right: auto;
+  }
+
+  & span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.toggle-control {
+  display: grid;
+  grid-template-columns: 20px 20px 20px;
+
+  & span {
+    text-align: center;
+  }
+}
+
+.toggle-bar {
+  grid-column: 1 / -1;
+  height: 20px;
+  background-color: c.$toggle-keypad-bg-1;
+  border-radius: 16px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 12px;
+  height: 12px;
+  background-color: c.$key-bg-red-1;
+  border-radius: 50%;
+}
+
+.display {
+  background-color: c.$screen-bg-1;
+  border-radius: 8px;
+  font-size: t.$fs-32;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  font-family: t.$league-spartan;
+  color: c.$text-white-1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: c.$toggle-keypad-bg-1;
+  border-radius: 8px;
+}
+
+button.span-2 {
+  grid-column: span 2;
+}
+
+.buttons > button {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: c.$key-bg-orange-1;
+  font-family: t.$league-spartan;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0px 1px 1px 2px c.$key-shadow-orange-1;
+  color: c.$text-blue-1;
+  cursor: pointer;
+}
+
+.buttons > .control-btn {
+  background-color: c.$key-bg-blue-1;
+  color: c.$text-white-1;
+  font-size: 1.25rem;
+  box-shadow: 0px 1px 1px 2px c.$key-shadow-blue-1;
+}
+
+.buttons > .eval-btn {
+  background-color: c.$key-bg-red-1;
+  color: c.$text-white-1;
+  font-size: 1.25rem;
+  box-shadow: 0px 1px 1px 2px c.$key-shadow-red-1;
+}
